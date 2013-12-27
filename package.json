@@ -1,0 +1,52 @@
+{
+  "name": "mathnum-polynomial",
+  "description": "Another mathnum package",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jostylr/mathnum-polynomial",
+  "author": {
+    "name": "James Taylor",
+    "email": "jostylr@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jostylr/mathnum-polynomial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jostylr/mathnum-polynomial/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jostylr/mathnum-polynomial/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">10.0"
+  },
+  "devDependencies" : {
+    "literate-programming" : "~0.7.5",
+    "tape" : "=2.3.0",
+    "browserify" : "=2.35.4",
+    "math-numbers" : ">=0.0.9"
+  },
+  "peerDependencies":{  
+    "math-numbers" : ">=0.0.9"
+  },
+  "dependencies" : {
+  },
+  "scripts" : { 
+    "test" : "node ./test/testrunner.js | grep -v -e ^ok",
+    "install": "node install.js"
+  },
+  "private" : true, 
+  "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [ 9, 10 ],
+          "firefox": [ 25, "nightly" ],
+          "chrome": [ 31, "canary" ],
+          "safari": [ 5.1]
+        }
+    }
+}
