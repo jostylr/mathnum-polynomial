@@ -4,6 +4,10 @@ Implementing polynomials for math-numbers
 
 ## Files
 
+Loading: 
+
+* [poly](# "load : poly.lp.md")
+
 
 Saving: 
 
@@ -21,6 +25,63 @@ Saving:
 
 ## Main
 
+This is the starting point for all the code that goes into index.js
+
+    /*global require, process, module*/
+
+    var Num = require('math-numbers');
+
+    var Poly = _"poly Constructor";
+
+    var pp = Poly.prototype;
+
+    var int = Num.int;
+    var bin = _"binomial coefficients |ife()";
+
+    var poly = pp.poly = _"poly::poly|ife(Poly)";
+    pp.str = _"poly::Str";
+    pp.evl = _"poly::Eval";
+    pp.fun = _"poly::as function";
+    pp.add = _"poly::add";
+    pp.shift = _"poly::shift";
+    pp.neg = _"poly::negate";
+    pp.flip = _"poly::flip odd signs";
+    pp.sub = _"poly::subtract";
+    pp.mul = _"poly::multiply";
+    pp.syndiv = _"poly::synthetic division";
+pp.div = _"poly::div";
+pp.quo = _"poly::quo";
+pp.rem = _"poly::rem";
+pp.inv = _"poly::inv";
+    pp.count = _"poly::count the signs";
+    pp.descartes = _"poly::descartes";
+    pp.translate  = _"poly::translate";
+    pp.tcf = _"poly::translate coefficients";
+pp.rationalroot = _"poly::rational roots";
+pp.zeros = _"poly::zeros";
+    pp.bounds = _"poly::root bounds";
+    pp.table = _"poly::table";
+pp.der = _"poly::derivative";
+pp.int = _"poly::integrate";
+
+
+    module.exports = Poly;
+
+
+### poly Constructor
+
+We take in an array of polynomial coefficients and produce a polynomial. We copy the array to prevent accidental manipulation of the array affecting the polynomial.
+
+    function (arr, options) {
+        var prop;
+        this.coef = [].concat(arr);
+        if (options) {
+            for (prop in options) {
+                this[prop] = options[prop];
+            }
+        }
+        return this;
+    }
 
 
 ## homepage
@@ -42,6 +103,9 @@ This is the main welcome page for math pebbles
 
 [body]()
 
+    This is the homepage for mathnum-polynomials. 
+
+    Basically, it has lots of goodies for everyone who wants to deal with or explore polynomials. Yay!
     
 
 ## README
